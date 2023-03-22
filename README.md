@@ -1,6 +1,8 @@
 # Conway's Game of Life
 Conway's Game of Life is a cellular automaton simulation devised by the British mathematician John Horton Conway. The game is a zero-player game, meaning its evolution is determined by its initial state, requiring no further input. The simulation illustrates the behavior of cells living on a grid, following simple rules that dictate whether cells live, die, or are born.
 
+This is a simple but complete implementation of it in Java.
+
 ## Rules
 The game consists of a grid of cells, each of which can be either alive or dead. The simulation evolves through discrete time steps, following these rules:
 - Any live cell with fewer than two live neighbors dies, as if by underpopulation.
