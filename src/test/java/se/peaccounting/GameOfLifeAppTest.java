@@ -18,7 +18,7 @@ class GameOfLifeAppTest {
 
     // Your test cases will go here
     @Test
-    void test() {
+    void testthetest() {
         int x = 2;
         int y = 2;
         assertEquals(x, y, "x and y should match");
