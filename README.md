@@ -24,7 +24,7 @@ The game consists of a grid of cells, each of which can be either alive or dead.
 #### Download release
 If you just want to see the Game of Life in action then
 [Download the latest release here.](https://github.com/robertkottelin/GameOfLife/releases/download/v1.0.0/GameOfLife.jar)
-You need to have Java Runtime Environment (JRE) installed on your system to run the program. 
+You need to have Java Runtime Environment (JRE) 17.0.6 or later installed on your system to run the program. 
 Open the file to run the program. 
 
 Or open a terminal, cd into the file's directory and type the command 
