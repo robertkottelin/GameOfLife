@@ -28,7 +28,7 @@ Click the link above, open the file to run the program.
 You need to have Java Runtime Environment (JRE) 17.0.6 or later installed on your system to run the program. 
 
 
-Or open a terminal, cd into the file's directory and type the command 
+Or open a terminal, cd into the file directory and type the command 
 
 `java -jar GameOfLife.jar`
 
