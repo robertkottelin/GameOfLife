@@ -11,12 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 public class GameOfLifeApp extends GameApplication {
 
-    private static final int CELL_SIZE = 10;
-    private static final int GRID_WIDTH = 80;
-    private static final int GRID_HEIGHT = 60;
-    private static final double UPDATE_STATE_INTERVAL = 0.1;
+    protected int CELL_SIZE = 10;
+    protected int GRID_WIDTH = 80;
+    protected int GRID_HEIGHT = 60;
+    protected double UPDATE_STATE_INTERVAL = 0.1;
 
-    private List<Entity> cells = new ArrayList<>();
+    protected List<Entity> cells = new ArrayList<>();
 
     @Override
     protected void initSettings(GameSettings settings) {
@@ -29,13 +29,13 @@ public class GameOfLifeApp extends GameApplication {
         scheduleGameStateUpdates();
     }
 
-    private void configureSettings(GameSettings settings) {
+    protected void configureSettings(GameSettings settings) {
         settings.setWidth(GRID_WIDTH * CELL_SIZE);
         settings.setHeight(GRID_HEIGHT * CELL_SIZE);
         settings.setTitle("Conway's Game of Life");
     }
 
-    private void createAndAttachCells() {
+    protected void createAndAttachCells() {
         for (int y = 0; y < GRID_HEIGHT; y++) {
             for (int x = 0; x < GRID_WIDTH; x++) {
                 Entity cell = createCell(x, y);
@@ -44,7 +44,7 @@ public class GameOfLifeApp extends GameApplication {
         }
     }
 
-    private Entity createCell(int x, int y) {
+    protected Entity createCell(int x, int y) {
         return FXGL.entityBuilder()
                 .at(x * CELL_SIZE, y * CELL_SIZE)
                 .view(new Rectangle(CELL_SIZE, CELL_SIZE, Color.BLACK))
@@ -52,7 +52,7 @@ public class GameOfLifeApp extends GameApplication {
                 .buildAndAttach();
     }
 
-    private void scheduleGameStateUpdates() {
+    protected void scheduleGameStateUpdates() {
         FXGL.run(() -> {
             List<Boolean> nextGeneration = computeNextGeneration();
 
@@ -60,7 +60,7 @@ public class GameOfLifeApp extends GameApplication {
         }, Duration.seconds(UPDATE_STATE_INTERVAL));
     }
 
-    private List<Boolean> computeNextGeneration() {
+    protected List<Boolean> computeNextGeneration() {
         List<Boolean> nextGeneration = new ArrayList<>();
 
         for (Entity cell : cells) {
@@ -78,7 +78,7 @@ public class GameOfLifeApp extends GameApplication {
         return nextGeneration;
     }
 
-    private void updateCells(List<Boolean> nextGeneration) {
+    protected void updateCells(List<Boolean> nextGeneration) {
         for (int i = 0; i < cells.size(); i++) {
             Entity cell = cells.get(i);
             boolean nextAlive = nextGeneration.get(i);
@@ -91,7 +91,7 @@ public class GameOfLifeApp extends GameApplication {
         }
     }
 
-    private int countAliveNeighbors(int x, int y) {
+    protected int countAliveNeighbors(int x, int y) {
         int aliveCount = 0;
 
         for (int yOffset = -1; yOffset <= 1; yOffset++) {
