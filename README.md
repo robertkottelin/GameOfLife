@@ -39,3 +39,5 @@ Or open a terminal, cd into the file's directory and type the command
 4. Execute the JAR file: `java -jar target/GameOfLife-1.0-SNAPSHOT.jar`
 
 This will launch the Game of Life simulation.
+
+![Game of Life](images/demoimage.png)
