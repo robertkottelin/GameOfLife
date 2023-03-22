@@ -36,3 +36,5 @@ build/
 
 ### Mac OS ###
 .DS_Store
+*.log
+logs/FXGL-22-Mar-2023-18.50.06.log
