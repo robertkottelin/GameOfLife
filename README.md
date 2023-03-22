@@ -1,6 +1,8 @@
 # Conway's Game of Life
 Conway's Game of Life is a cellular automaton simulation devised by the British mathematician John Horton Conway. The game is a zero-player game, meaning its evolution is determined by its initial state, requiring no further input. The simulation illustrates the behavior of cells living on a grid, following simple rules that dictate whether cells live, die, or are born.
 
+This is a simple but complete implementation of it in Java.
+
 ## Rules
 The game consists of a grid of cells, each of which can be either alive or dead. The simulation evolves through discrete time steps, following these rules:
 - Any live cell with fewer than two live neighbors dies, as if by underpopulation.
@@ -24,10 +26,11 @@ The game consists of a grid of cells, each of which can be either alive or dead.
 #### Download release
 If you just want to see the Game of Life in action then
 [Download the latest release here.](https://github.com/robertkottelin/GameOfLife/releases/download/v1.0.0/GameOfLife.jar)
-You need to have Java Runtime Environment (JRE) installed on your system to run the program. 
-Open the file to run the program. 
+Click the link above, open the file to run the program.
+You need to have Java Runtime Environment (JRE) 17.0.6 or later installed on your system to run the program. 
 
-Or open a terminal, cd into the file's directory and type the command 
+
+Or open a terminal, cd into the file directory and type the command 
 
 `java -jar GameOfLife.jar`
 
