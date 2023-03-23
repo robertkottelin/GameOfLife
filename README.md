@@ -39,7 +39,7 @@ Or open a terminal, cd into the file directory and type the command
 1. Open a terminal and clone the GitHub repository to your local machine:
    `git clone https://github.com/yourusername/GameOfLife.git`
 2. Navigate to the project directory: `cd GameOfLife`
-3. Compile the project using Maven: `mvn clean compile assembly:single`
+3. Compile the project using Maven: `mvn clean package`
 4. Execute the JAR file: `java -jar target/GameOfLife-1.0-SNAPSHOT.jar`
 
 This will launch the Game of Life simulation.
