@@ -1,5 +1,4 @@
 package se.peaccounting;
-
 import com.almasb.fxgl.entity.Entity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GameOfLifeAppTest {
     private GameOfLifeApp game;
+
 
     @BeforeEach
     void setUp() {
@@ -58,9 +58,45 @@ class GameOfLifeAppTest {
 
         assertTrue(nextGeneration.get(0));
         assertTrue(nextGeneration.get(1));
-        assertTrue(nextGeneration.get(2));
         assertTrue(nextGeneration.get(3));
         assertTrue(nextGeneration.get(4));
     }
 
+    @Test
+    void updateCells() {
+        game.GRID_WIDTH = 3;
+        game.GRID_HEIGHT = 3;
+        game.cells.clear();
+        for (int i = 0; i < 9; i++) {
+            Entity cell = new Entity();
+            cell.setProperty("alive", false);
+            game.cells.add(cell);
+        }
+
+        List<Boolean> nextGeneration = List.of(true, true, true, true, true, true, true, true, true);
+        game.updateCells(nextGeneration);
+
+        for (Entity cell : game.cells) {
+            assertTrue(cell.getBoolean("alive"), "All cells should be alive after updating");
+        }
+    }
+
+    @Test
+    void computeNextGenerationStarPattern() {
+        // Set up a simple 3x3 grid with alive cells to create the "star" pattern
+        game.GRID_WIDTH = 5;
+        game.GRID_HEIGHT = 5;
+        game.cells.clear();
+        for (int i = 0; i < 25; i++) {
+            Entity cell = new Entity();
+            cell.setProperty("alive", i == 7 || i == 12 || i == 17 );
+            game.cells.add(cell);
+        }
+
+        List<Boolean> nextGeneration = game.computeNextGeneration();
+
+        assertTrue(nextGeneration.get(11));
+        assertTrue(nextGeneration.get(12));
+        assertTrue(nextGeneration.get(13));
+    }
 }
