@@ -1,4 +1,5 @@
 package se.peaccounting;
+
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.dsl.FXGL;
@@ -9,12 +10,11 @@ import javafx.util.Duration;
 
 import java.util.ArrayList;
 import java.util.List;
-public class GameOfLifeApp extends GameApplication {
 
-    protected int CELL_SIZE = 10;
-    protected int GRID_WIDTH = 80;
-    protected int GRID_HEIGHT = 60;
-    protected double UPDATE_STATE_INTERVAL = 0.1;
+import static com.almasb.fxgl.dsl.FXGLForKtKt.getGameWorld;
+import static se.peaccounting.GameOfLifeConfig.*;
+
+public class GameOfLifeApp extends GameApplication {
 
     protected List<Entity> cells = new ArrayList<>();
 
@@ -30,26 +30,19 @@ public class GameOfLifeApp extends GameApplication {
     }
 
     protected void configureSettings(GameSettings settings) {
-        settings.setWidth(GRID_WIDTH * CELL_SIZE);
-        settings.setHeight(GRID_HEIGHT * CELL_SIZE);
+        settings.setWidth(GRID_WIDTH);
+        settings.setHeight(GRID_HEIGHT);
         settings.setTitle("Conway's Game of Life");
     }
 
     protected void createAndAttachCells() {
         for (int y = 0; y < GRID_HEIGHT; y++) {
             for (int x = 0; x < GRID_WIDTH; x++) {
-                Entity cell = createCell(x, y);
+                GameOfLifeCell cell = new GameOfLifeCell(x, y, CELL_SIZE);
                 cells.add(cell);
+                getGameWorld().addEntity(cell);
             }
         }
-    }
-
-    protected Entity createCell(int x, int y) {
-        return FXGL.entityBuilder()
-                .at(x * CELL_SIZE, y * CELL_SIZE)
-                .view(new Rectangle(CELL_SIZE, CELL_SIZE, Color.BLACK))
-                .with("alive", Math.random() < 0.5)
-                .buildAndAttach();
     }
 
     protected void scheduleGameStateUpdates() {
