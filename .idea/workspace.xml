@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f7a2489-6533-4458-85f6-61bd8bdddfd2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/se/peaccounting/GameLogic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/se/peaccounting/GameLogicTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/se/peaccounting/GameOfLifeAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/se/peaccounting/GameOfLifeAppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/se/peaccounting/GameOfLifeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/peaccounting/GameOfLifeApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/se/peaccounting/GameOfLifeAppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
