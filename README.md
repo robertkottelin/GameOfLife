@@ -3,6 +3,8 @@ Conway's Game of Life is a cellular automaton simulation devised by the British 
 
 This is a simple but complete implementation of it in Java. The JavaFX Game Development Framework FXGL (https://github.com/AlmasB/FXGL) is used for visualizing the cells.
 
+![Game of Life](images/demoimage.png)
+
 ## Rules
 The game consists of a grid of cells, each of which can be either alive or dead. The simulation evolves through discrete time steps, following these rules:
 - Any live cell with fewer than two live neighbors dies, as if by underpopulation.
@@ -43,5 +45,3 @@ Or open a terminal, cd into the file directory and type the command
 4. Execute the JAR file: `java -jar target/GameOfLife-1.0-SNAPSHOT.jar`
 
 This will launch the Game of Life simulation.
-
-![Game of Life](images/demoimage.png)
