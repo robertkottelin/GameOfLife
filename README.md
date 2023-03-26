@@ -16,7 +16,7 @@ The game consists of a grid of cells, each of which can be either alive or dead.
 - Main.java: Located in src/main/java/se/peaccounting/. This file serves as the entry point for the application, launching the GameOfLifeApp.
 - GameOfLifeApp.java: Located in src/main/java/se/peaccounting/. This is the main application class for Conway's Game of Life.
 - GameLogic.java: Located in src/main/java/se/peaccounting/. This is a class housing methods for managing and updating the game logic.
-- GameOfLifeAppTest.java: Located in src/test/java/se/peaccounting/. This file contains tests to verify the game logic of the application.
+- GameLogicTest.java: Located in src/test/java/se/peaccounting/. This file contains tests to verify the game logic.
 
 ## Future Improvements and Todos
 - Database integration: Save simulation states, allowing users to load and replay their favorite configurations.
@@ -32,7 +32,6 @@ If you just want to see the Game of Life in action then
 [Download the latest release here.](https://github.com/robertkottelin/GameOfLife/releases/download/v1.0.0/GameOfLife.jar)
 Click the link and open the file to run the program.
 You need to have Java Runtime Environment (JRE) 17 or later installed on your system to run the program. 
-
 
 Or open a terminal, cd into the file directory and type the command 
 
