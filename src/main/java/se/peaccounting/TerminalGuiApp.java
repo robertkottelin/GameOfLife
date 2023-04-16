@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class TerminalGuiApp {
     // Grid dimensions (8x8 cells)
-    private static final int GRID_WIDTH = 8;
+    private static final int GRID_WIDTH = 12;
     private static final int GRID_HEIGHT = 8;
 
     // The current generation grid, containing alive (true) and dead (false) cells
