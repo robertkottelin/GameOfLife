@@ -1,9 +1,9 @@
 package se.peaccounting;
 
-import java.util.Scanner;
+import java.util.Scanner; // A simple text scanner, can parse primitive types and strings using regular expressions
 
 public class TerminalGuiApp {
-    // Grid dimensions (8x8 cells)
+    // Grid dimensions
     private static final int GRID_WIDTH = 12;
     private static final int GRID_HEIGHT = 8;
 
