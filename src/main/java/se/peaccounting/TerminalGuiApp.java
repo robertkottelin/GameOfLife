@@ -9,7 +9,9 @@ import java.util.concurrent.TimeUnit;
 
 public class TerminalGuiApp {
     // Define the dimensions of the grid
-    private static final int GRID_WIDTH = 44000; // 44200^2 = 1 953 640 000 cells, 8.6 seconds for a generationupdate
+    // 44000^2 = 1 936 000 000 cells, 36.22 seconds for initialization, 8.72 seconds for a generationupdate
+    // O(n*m) time complexity, O(n*m) space complexity increase of grid by 10x --> approx 10x time increase
+    private static final int GRID_WIDTH = 44000; 
     private static final int GRID_HEIGHT = 44000;
 
     // Create the grid for the current and next generations
