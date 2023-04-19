@@ -65,6 +65,8 @@ public class TerminalGuiApp {
 
     /**
      * Updates the grid to the next generation based on the Game of Life rules.
+     * TODO: Minimize array copying
+     * TODO: Multi-thread the calculation of the next generation
      */
     private static void updateGeneration() {
         for (int row = 0; row < GRID_HEIGHT; row++) {
@@ -92,6 +94,7 @@ public class TerminalGuiApp {
      * @param row The row index of the cell
      * @param col The column index of the cell
      * @return The number of live neighbors
+     * TODO: cache neighbor counts to improve performance
      */
     private static int countLiveNeighbors(int row, int col) {
         int liveNeighbors = 0;
