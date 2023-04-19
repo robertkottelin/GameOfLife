@@ -4,11 +4,12 @@ import java.util.Scanner; // A simple text scanner, can parse primitive types an
 
 public class TerminalGuiApp {
     // Grid dimensions
-    private static final int GRID_WIDTH = 12;
+    private static final int GRID_WIDTH = 8;
     private static final int GRID_HEIGHT = 8;
 
     // The current generation grid, containing alive (true) and dead (false) cells
-    private static boolean[][] currentGeneration = new boolean[GRID_HEIGHT][GRID_WIDTH];
+    // TODO: If memory is a concern, use a BitSet instead of a boolean array
+    private static boolean[][] currentGeneration = new boolean[GRID_HEIGHT][GRID_WIDTH]; 
     
     // The next generation grid, used to store the updated cell states
     private static boolean[][] nextGeneration = new boolean[GRID_HEIGHT][GRID_WIDTH];
@@ -17,6 +18,8 @@ public class TerminalGuiApp {
         // Initialize the grid with random cell states
         initializeGridWithRandomValues();
 
+        // Run the game loop
+        // the scanner class implements AutoCloseable interface, which allows it to be used in a try-with-resources statement 
         try (Scanner scanner = new Scanner(System.in)) {
             while (true) {
                 // Display the current generation grid
@@ -42,7 +45,7 @@ public class TerminalGuiApp {
     private static void initializeGridWithRandomValues() {
         for (int row = 0; row < GRID_HEIGHT; row++) {
             for (int col = 0; col < GRID_WIDTH; col++) {
-                currentGeneration[row][col] = Math.random() > 0.5;
+                currentGeneration[row][col] = Math.random() > 0.5; // 50% chance of being alive
             }
         }
     }
