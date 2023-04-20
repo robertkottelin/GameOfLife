@@ -14,12 +14,12 @@ public class TerminalGuiApp {
     private static final int GRID_WIDTH = 44000; 
     private static final int GRID_HEIGHT = 44000;
 
-    // Create the grid for the current and next generations
+    // Create the grid for the current and next generations, using BitSets for memory optimization
     private static BitSet[] currentGeneration = new BitSet[GRID_HEIGHT];
     private static BitSet[] nextGeneration = new BitSet[GRID_HEIGHT];
     
-    // Cache for live neighbors count
-    // Exception in thread "main" java.lang.OutOfMemoryError: Java heap space (if grid > 10000x10000)
+    // Cache for live neighbors count for memory optimization
+    // Exception in thread "main" java.lang.OutOfMemoryError: Java heap space (if grid > (44 000 x 44 000))
     private static int[][] liveNeighborsCache = new int[GRID_HEIGHT][GRID_WIDTH];
 
     public static void main(String[] args) {
@@ -81,7 +81,7 @@ public class TerminalGuiApp {
             Arrays.fill(liveNeighborsCache[row], 0);
         }
     
-        // Create a fixed thread pool based on the number of available processors
+        // Create a fixed thread pool based on the number of available threads in processor
         ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
     
         // Iterate through each cell in the grid
